@@ -1,0 +1,35 @@
+body {
+  color: #999;
+  justify-content: center;
+  display: flex;
+}
+
+
+
+.holes{
+    width: 500px;
+    height: 606px;
+    display: flex;
+    flex-wrap: wrap; 
+    margin-top: 100px; 
+}
+
+.cell {
+  background-color: black;
+  box-sizing: border-box;
+  width: 120px;
+  height: 120px;
+  margin: 0 15px 15px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.mole {
+  background-image: url("goblin.png");
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width:120px; 
+  pointer-events: all;
+  z-index: 1;
+}
