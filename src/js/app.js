@@ -1,6 +1,6 @@
 const holes = document.querySelector('.holes');
 
-for (let i = 1; i < 10; i+=) {
+for (let i = 1; i < 10; i += 1) {
   const hole = document.createElement('div');
   hole.classList.add('cell');
   holes.appendChild(hole);

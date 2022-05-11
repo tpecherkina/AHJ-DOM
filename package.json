@@ -2,6 +2,7 @@
   "name": "ajs",
   "version": "1.0.0",
   "main": "Team.js",
+  "type": "module",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
@@ -30,14 +31,22 @@
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.6.3",
-    "live-server": "^1.2.1",
+    "live-server": "^1.2.2",
     "mini-css-extract-plugin": "^0.9.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "core-js": "^3.21.0"
+    "core-js": "^3.22.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpecherkina/AHJ-DOM.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tpecherkina/AHJ-DOM/issues"
+  },
+  "homepage": "https://github.com/tpecherkina/AHJ-DOM#readme",
   "description": ""
 }
