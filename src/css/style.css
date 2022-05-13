@@ -25,7 +25,7 @@ body {
 }
 
 .mole {
-  background-image: url("./goblin.png");
+  background-image: url("..images/goblin.png");
   background-size: cover;
   top: 0;
   left: 0;
