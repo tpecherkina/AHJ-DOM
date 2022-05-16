@@ -1,40 +1,54 @@
-const holes = document.querySelector('.holes')
-const hit = document.querySelector('#hit')
-const missed = document.querySelector("#missed")
-let hitTimes = 0
-let missedTimes = 0
-let goblinImgCell 
-
-for (let i = 1; i < 10; i += 1) {
-  const hole = document.createElement('div');
-  hole.classList.add('cell');
-  holes.appendChild(hole);
-}
-
 const cells = Array.from(document.querySelectorAll('.cell'));
+let hitPosition;
+const hit = document.querySelector('#hit');
+const missed = document.querySelector('#missed');
+let resultPlus = 0;
+let resultMinus = 0;
 
 function goblinImg(index, number) {
   if (index !== -1) {
     cells[index].classList.remove('mole');
   }
-  goblinImgCell = cells[number];
+  const goblinImgCell = cells[number];
   goblinImgCell.classList.add('mole');
-
+  hitPosition = goblinImgCell.id;
 }
 
-holes.forEach(hole => {
-  hole.addEventListener('mousedown', () => {
-    if (hole.id == goblinImgCell) {
-      result++
-      hitTimes.textContent = result
-      goblinImgCell = null
-    }
-  })
-    if(hole.id !== goblinImgCell) {
-      result++
-      missedTimes.textContent = result
-      goblinImgCell = null
-    }
-  })
+setInterval(() => {
+  const index = cells.findIndex((item) => item.className.includes('mole'));
+  let number = Math.floor(Math.random() * cells.length);
+  if (number === index) {
+    number = Math.floor(Math.random() * cells.length);
+  } else {
+    goblinImg(index, number);
+  }
+}, 1000);
 
+cells.forEach((square) => {
+  square.addEventListener('mousedown', () => {
+    if (square.id === hitPosition) {
+      resultPlus+=1
+      hit.textContent = resultPlus;
+      hitPosition = null;
+      if (Number(hit.textContent) === 5) {
+        alert('Вы победили!');
+        window.location.reload();
+      }
+    }
+  });
+});
 
+cells.forEach((square) => {
+  square.addEventListener('mousedown', () => {
+    if (square.id !== hitPosition) {
+      resultMinus+=1
+      missed.textContent = resultMinus;
+      hitPosition = null;
+      if (Number(missed.textContent) === 5) {
+        alert('Вы проиграли!');
+        hitPosition = null;
+        window.location.reload();
+      }
+    }
+  });
+});
