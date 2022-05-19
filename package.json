@@ -8,12 +8,13 @@
     "build": "webpack --mode production",
     "lint": "eslint .",
     "test": "jest",
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage --passWithNoTests",
     "preshow:coverage": "npm run coverage",
     "lint:fix": "eslint . --fix",
     "show:coverage": "live-server coverage/lcov-report",
     "preshow:dist": "npm run build",
-    "show:dist": "live-server dist"
+    "show:dist": "live-server dist",
+    
   },
   "author": "coursar",
   "license": "MIT",
