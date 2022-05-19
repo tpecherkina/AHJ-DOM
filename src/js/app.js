@@ -27,11 +27,10 @@ setInterval(() => {
 cells.forEach((square) => {
   square.addEventListener('mousedown', () => {
     if (square.id === hitPosition) {
-      resultPlus+=1
+      resultPlus += 1;
       hit.textContent = resultPlus;
       hitPosition = null;
       if (Number(hit.textContent) === 5) {
-        alert('Вы победили!');
         window.location.reload();
       }
     }
@@ -41,11 +40,10 @@ cells.forEach((square) => {
 cells.forEach((square) => {
   square.addEventListener('mousedown', () => {
     if (square.id !== hitPosition) {
-      resultMinus+=1
+      resultMinus += 1;
       missed.textContent = resultMinus;
       hitPosition = null;
       if (Number(missed.textContent) === 5) {
-        alert('Вы проиграли!');
         hitPosition = null;
         window.location.reload();
       }
