@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 const cells = Array.from(document.querySelectorAll('.cell'));
 let hitPosition;
 const hit = document.querySelector('#hit');
