@@ -1,2 +1,2 @@
 /* eslint-disable eol-last */
-import './js/app';
+import './js/app.js';

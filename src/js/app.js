@@ -27,25 +27,19 @@ setInterval(() => {
 
 cells.forEach((square) => {
   square.addEventListener('mousedown', () => {
-    if (square.id === hitPosition) {
-      resultPlus += 1;
-      hit.textContent = resultPlus;
-      hitPosition = null;
-      if (Number(hit.textContent) === 5) {
-        window.location.reload();
-      }
-    }
-  });
-});
-
-cells.forEach((square) => {
-  square.addEventListener('mousedown', () => {
     if (square.id !== hitPosition) {
       resultMinus += 1;
       missed.textContent = resultMinus;
       hitPosition = null;
       if (Number(missed.textContent) === 5) {
         hitPosition = null;
+        window.location.reload();
+      }
+    } if (square.id === hitPosition) {
+      resultPlus += 1;
+      hit.textContent = resultPlus;
+      hitPosition = null;
+      if (Number(hit.textContent) === 5) {
         window.location.reload();
       }
     }
